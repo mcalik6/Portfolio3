@@ -64,6 +64,44 @@ def update_phone_worksheet(phone):
     phone_worksheet = SHEET.worksheet("phone_number")
     phone_worksheet.append_row([phone])
 
+def get_pending():
+    """
+    Now we try to fix that before making call
+    """
+    answer1 = None
+    answer2 = None
+    answer3 = None 
+
+    while answer1 not in ['Y','N']:
+        answer1 = input("Did you turned  off your computer ? (Y/N) \n").upper()
+
+    while answer2 not in ['Y','N']:
+        answer2 = input("Did you turned your computer on? (Y/N) \n").upper()
+    
+    while answer3 not in ['Y','N']:
+        answer3 = input("Is it working now?? (Y/N) \n").upper()
+
+    status= None
+    if answer1 == 'Y' and answer2 == 'Y' and answer3 == 'Y':
+        status = 0
+        """print("There is no need to call you your computer is working\n")"""
+    else:
+        status = 1
+        """"print("Wait for our support teem to contact you \n")"""
+
+    return status
+
+def update_pending_worksheet(pending):
+    """
+    Update pending calls  sheet
+    """
+    
+    
+    pending_worksheet = SHEET.worksheet("pending")
+    pending_worksheet.append_row([pending])
+
+    
+
 def main():
 
     name = get_name()
@@ -72,5 +110,7 @@ def main():
     update_surname_worksheet(surname)
     phone = get_phone()
     update_phone_worksheet(phone)
+    pending = get_pending()
+    update_pending_worksheet(pending)
 
 main ()
