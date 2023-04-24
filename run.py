@@ -13,8 +13,22 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Portfolio3')
 
-customer = SHEET.worksheet('customer')
+def get_name ():
+    """
+    function is getting name of the user
+    """
+    print ("Thank you for contacting our service team\n")
+    name_str = input("Enter Your name here \n")
+    return name_str
 
-data = customer.get_all_values()
 
-print(data)
+def update_name_worksheet(name):
+    """
+    Update name sheet
+    """
+    print("thank you for your name...\n")
+    name_worksheet = SHEET.worksheet("name")
+    name_worksheet.append_row([name])
+  
+name = get_name()
+update_name_worksheet(name)
