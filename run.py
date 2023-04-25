@@ -95,7 +95,7 @@ def update_pending_worksheet(pending):
     """
     Update pending calls  sheet plus give customers of how long does he have to wait
     """
-    print("Thank You for your time. please let us check our pending calls\n")
+    print("Thank You for your time. \n")
     
     pending_worksheet = SHEET.worksheet("pending")
     """pending_worksheet.append_row([pending])"""
@@ -109,6 +109,7 @@ def update_pending_worksheet(pending):
             print("your call has been registered. We will contact you shortly\n")
         else:
             print ("Your call has been registered. You are number {} in the que\n".format(queue_number+1))
+            print ("estimated waitng time per call - 10 minutes\n")
 
 
     
