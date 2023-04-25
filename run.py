@@ -127,4 +127,4 @@ def main():
     pending = get_pending()
     update_pending_worksheet(pending)
 
-main ()
+main()
