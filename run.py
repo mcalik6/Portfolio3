@@ -93,12 +93,23 @@ def get_pending():
 
 def update_pending_worksheet(pending):
     """
-    Update pending calls  sheet
+    Update pending calls  sheet plus give customers of how long does he have to wait
     """
-    
+    print("Thank You for your time. please let us check our pending calls\n")
     
     pending_worksheet = SHEET.worksheet("pending")
-    pending_worksheet.append_row([pending])
+    """pending_worksheet.append_row([pending])"""
+    pending_list = pending_worksheet.col_values(1)
+    queue_number = pending_list.count("1")
+    if pending == 0:
+        print ("there is no need to contact you, your computer is workinng now\n")
+    else:
+        pending_worksheet.append_row([pending])
+        if queue_number == 0:
+            print("your call has been registered. We will contact you shortly\n")
+        else:
+            print ("Your call has been registered. You are number {} in the que\n".format(queue_number+1))
+
 
     
 
