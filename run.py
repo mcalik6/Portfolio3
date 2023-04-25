@@ -110,7 +110,7 @@ def update_pending_worksheet(pending):
         if queue_number == 0:
             print("your call has been registered.\n We will contact you shortly\n")
         else:
-            print("Your call has been registered.\n You are number {} in the que\n".format(queue_number+1))
+            print("Your call has been registered.ss\n You are number {} in the que\n".format(queue_number+1))
             print("estimated waitng time per call - 10 minutes\n")
 
 
