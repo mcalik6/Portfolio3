@@ -3,6 +3,8 @@
 
 Pc Service call - is mainly for thew customer point of view, where thru the terminal customer can put his details answer for 3 questions which might help to solve the problem if that wouldnot help customer would be informed about which in the queue  he is 
 
+![image](https://user-images.githubusercontent.com/116521971/234273394-eb8eb59e-3251-491f-b4c5-cb9eec39cb59.png)
+
 
 
 
@@ -12,6 +14,10 @@ Pc Service call - is mainly for thew customer point of view, where thru the term
 Customer contacting service has to provide his Name, Surname and NUmber (which has to be a number)
 than he is answering for 3 simple questions guiding him to fix the problem himself
 if the problem is not fixed after 3 questions he will get a service call
+
+link t heroku app :
+https://servicecallcalik1.herokuapp.com/
+
 ![image](https://user-images.githubusercontent.com/116521971/234255625-089ceb62-9aaa-4ec6-958b-dd4bf7d10f24.png)
 
 
