@@ -13,12 +13,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Portfolio3')
 
-def get_name ():
+def get_name():
+    
     """
     function is getting name of the user
     """
-    print ("Thank you for contacting our service team\n")
-    print ("This is PC related departement\n")
+    print("Thank you for contacting our service team\n")
+    print("This is PC related departement\n")
     name_str = input("Please provide your name \n")
     return name_str
 
@@ -30,7 +31,7 @@ def update_name_worksheet(name):
     name_worksheet = SHEET.worksheet("name")
     name_worksheet.append_row([name])
 
-def get_surname ():
+def get_surname():
     """
     function is getting surname of the user
     """
@@ -45,7 +46,7 @@ def update_surname_worksheet(surname):
     surname_worksheet = SHEET.worksheet("surname")
     surname_worksheet.append_row([surname])
 
-def get_phone ():
+def get_phone():
     """
     function is getting phone number of the user
     """
@@ -54,7 +55,7 @@ def get_phone ():
             number = int(input ("Enter Your phone number: \n"))
             return number
         except ValueError:
-            print ("Invalid input, Please enter phone number")
+            print("Invalid input, Please enter phone number")
     
 def update_phone_worksheet(phone):
     """
@@ -93,7 +94,8 @@ def get_pending():
 
 def update_pending_worksheet(pending):
     """
-    Update pending calls  sheet plus give customers of how long does he have to wait
+    Update pending calls  sheet plus give customers 
+    of how long does he have to wait
     """
     print("Thank You for your time. \n")
     
@@ -102,14 +104,14 @@ def update_pending_worksheet(pending):
     pending_list = pending_worksheet.col_values(1)
     queue_number = pending_list.count("1")
     if pending == 0:
-        print ("there is no need to contact you, your computer is workinng now\n")
+        print("there is no need to contact you,\n your computer is workinng now\n")
     else:
         pending_worksheet.append_row([pending])
         if queue_number == 0:
-            print("your call has been registered. We will contact you shortly\n")
+            print("your call has been registered.\n We will contact you shortly\n")
         else:
-            print ("Your call has been registered. You are number {} in the que\n".format(queue_number+1))
-            print ("estimated waitng time per call - 10 minutes\n")
+            print("Your call has been registered.\n You are number {} in the que\n".format(queue_number+1))
+            print("estimated waitng time per call - 10 minutes\n")
 
 
     
@@ -125,4 +127,4 @@ def main():
     pending = get_pending()
     update_pending_worksheet(pending)
 
-main ()
+main()
